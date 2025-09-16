@@ -18,7 +18,7 @@ void main() {
     usecase = SearchRecipes(mockRecipeRepository);
   });
 
-  const tQuery = 'chicken,pasta';
+  const tQuery = 'chicken';
   final tRecipeList = [
     const Recipe(
       id: 1,
