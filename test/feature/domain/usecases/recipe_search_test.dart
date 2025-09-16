@@ -18,23 +18,27 @@ void main() {
     usecase = SearchRecipes(mockRecipeRepository);
   });
 
-  final tQuery = 'chicken,pasta';
+  const tQuery = 'chicken,pasta';
   final tRecipeList = [
-    Recipe(id: 1, title: 'Chicken Pasta', image: 'image.url', usedIngredientCount: 2, missedIngredientCount: 1),
+    const Recipe(
+      id: 1,
+      title: 'Chicken Pasta',
+      image: 'image.url',
+      usedIngredientCount: 2,
+      missedIngredientCount: 1,
+    ),
   ];
 
-  test(
-    'should get recipes from the repository for the given query',
-        () async {
-      // arrange
-      when(mockRecipeRepository.searchRecipes(any))
-          .thenAnswer((_) async => Right(tRecipeList));
-      // act
-      final result = await usecase(tQuery);
-      // assert
-      expect(result, Right(tRecipeList));
-      verify(mockRecipeRepository.searchRecipes(tQuery));
-      verifyNoMoreInteractions(mockRecipeRepository);
-    },
-  );
+  test('should get recipes from the repository for the given query', () async {
+    // arrange
+    when(
+      mockRecipeRepository.searchRecipes(any),
+    ).thenAnswer((_) async => Right(tRecipeList));
+    // act
+    final result = await usecase(tQuery);
+    // assert
+    expect(result, Right(tRecipeList));
+    verify(mockRecipeRepository.searchRecipes(tQuery));
+    verifyNoMoreInteractions(mockRecipeRepository);
+  });
 }
