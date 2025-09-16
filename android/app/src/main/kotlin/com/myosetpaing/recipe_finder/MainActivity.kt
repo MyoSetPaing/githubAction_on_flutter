@@ -1,0 +1,5 @@
+package com.myosetpaing.recipe_finder
+
+import io.flutter.embedding.android.FlutterActivity
+
+class MainActivity : FlutterActivity()
