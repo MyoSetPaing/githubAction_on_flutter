@@ -44,7 +44,7 @@ class _RecipeSearchPageState extends State<RecipeSearchPage> {
                 switch (state) {
                   case RecipeSearchInitial():
                     return const Center(
-                      child: Text('What are you cooking today?'),
+                      child: Text('Hello'),
                     );
                   case RecipeSearchLoading():
                     return const Center(child: CircularProgressIndicator());

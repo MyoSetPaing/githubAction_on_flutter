@@ -16,4 +16,6 @@ class SearchRecipes {
     }
     return await repository.searchRecipes(ingredients);
   }
+
+
 }
